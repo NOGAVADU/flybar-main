@@ -1,0 +1,46 @@
+.warning {
+  max-width: 768px;
+  background: #f2c94c;
+  margin: 0 auto;
+  padding: 60px 39px;
+}
+.warning__text {
+  font-family: Roboto, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  color: #131313;
+}
+.text-green {
+  color: #589f46;
+}
+.text-purple {
+  color: #7125bc;
+}
+
+.resume {
+  margin: 0 auto;
+  padding: 60px 39px;
+}
+.resume__title {
+  color: #000;
+
+  font-family: Roboto;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.resume__list {
+}
+.resume__list-item {
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+.text-strong {
+  font-weight: 700;
+}

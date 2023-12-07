@@ -1,0 +1,636 @@
+// Переменные
+$main-font: Raleway;
+$title-font: NextArt;
+$main-text-color: #f4f4f4;
+$accent-color: #e3531c;
+$decoration-shadow: 4px -6px 0 $accent-color;
+
+// Стили страницы
+.page {
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: $main-text-color;
+    font-size: 18px;
+    font-family: $main-font;
+}
+
+// Стили повторяющихся элементов
+.container {
+    max-inline-size: 1420px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(#000000, 0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.title {
+    font-weight: bold;
+    font-family: $title-font;
+}
+
+.title-accent-big {
+    color: $accent-color;
+    font-size: 50px;
+}
+
+.text-accent-big {
+    color: $accent-color;
+    font-size: 25px;
+}
+
+.link {
+    color: inherit;
+    transition: color 0.1s;
+    &:hover {
+        color: $accent-color;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:focus-visible {
+        outline: 1px solid $main-text-color;
+    }
+}
+
+.button {
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    &:focus {
+        outline: none;
+    }
+    &:focus-visible {
+        outline-offset: 2px;
+        outline: 1px solid $main-text-color;
+    }
+}
+
+.content__button {
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    text-align: center;
+    width: calc(100% / 3 - 100px);
+    padding: 10px 40px;
+    font-size: 30px;
+    border-top: 1px solid $main-text-color;
+    border-bottom: 1px solid $main-text-color;
+    transition: all 0.1s;
+    &:hover {
+        color: $accent-color;
+        border-top: 1px solid $accent-color;
+        border-bottom: 1px solid $accent-color;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:focus-visible {
+        outline-offset: 2px;
+        outline: 1px solid $main-text-color;
+    }
+}
+
+// Шапка сайта
+.header {
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    background-color: #0000004d;
+    &__container {
+        display: grid;
+        grid-template: clamp(3.125rem, 2.2321rem + 4.4643vw, 6.25rem) / auto 1fr auto;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__logo {
+        width: clamp(5rem, 4.2857rem + 3.5714vw, 7.5rem);
+    }
+
+    &__menu {
+        font-family: $title-font, sans-serif;
+        font-weight: 600;
+
+        &-list {
+            display: flex;
+            gap: 30px;
+        }
+
+        &-item {
+        }
+        &-link {
+        }
+    }
+
+    &__contacts {
+        justify-self: end;
+        font-family: $main-font, sans-serif;
+        display: flex;
+        gap: 20px;
+
+        &-callback {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            &-icon {
+                height: 25px;
+            }
+        }
+
+        &-address {
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            &-link {
+            }
+        }
+    }
+}
+
+// Основной контент страницы
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    &__section {
+    }
+}
+
+// Блок с баннером сайта
+.banner {
+    position: relative;
+    &__container {
+    }
+
+    &__img {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+// Блок с общей информацией о компании
+.about {
+    &__container {
+        display: grid;
+        grid-template: 1fr / repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    &__text {
+        &-title {
+            font-size: 30px;
+            margin-block-end: 50px;
+        }
+
+        &-paragraph {
+            margin-block-end: 30px;
+        }
+    }
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: $decoration-shadow;
+    }
+}
+
+// Блок с топовыми услугами компании
+.service {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 30px;
+        margin-block-end: 50px;
+        text-align: right;
+    }
+
+    &__cards-list {
+        display: grid;
+        grid-template: 1fr / repeat(3, 1fr);
+        gap: 25px;
+        margin-block-end: 30px;
+    }
+}
+
+// Карточка товара
+.card {
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 4px 6px 0 $accent-color;
+    text-shadow: 2px 2px 0 #000;
+    &__container {
+        height: 100%;
+        position: relative;
+        padding: 15px;
+        display: grid;
+        grid-template: 1fr 2fr 1fr / 1fr;
+        gap: 25px;
+        z-index: 1;
+    }
+
+    &__title {
+        font-size: 28px;
+    }
+
+    &__content {
+        font-size: 20px;
+
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        gap: 20px;
+
+        &-description {
+            line-height: 20px;
+        }
+
+        &-list {
+            align-self: start;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            &-item {
+                &::before {
+                    content: "- ";
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+
+        &-button {
+            cursor: pointer;
+            font-size: 22px;
+            padding: 5px 10px;
+            border: 1px solid $main-text-color;
+            transition: all 0.1s;
+            &:hover {
+                color: $accent-color;
+                border: 1px solid $accent-color;
+            }
+        }
+        &-price {
+        }
+    }
+
+    &__coctail {
+        background-image: url(../images/service/coctail-bar.png);
+    }
+
+    &__coffee {
+        background-image: url(../images/service/coffee-bar.png);
+    }
+
+    &__tea {
+        background-image: url(../images/service/tea-bar.png);
+    }
+}
+
+// Блок с портфолио
+
+.portfolio {
+    &__container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin-block-end: 50px;
+    }
+
+    &__gallery {
+        display: grid;
+        grid-template-areas:
+            "ph1 ph1 ph2"
+            "ph3 ph5 ph2"
+            "ph3 ph4 ph4";
+        gap: 15px;
+        margin-block-end: 30px;
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__more-button {
+    }
+}
+
+.ph1 {
+    grid-area: ph1;
+}
+.ph2 {
+    grid-area: ph2;
+}
+.ph3 {
+    grid-area: ph3;
+}
+.ph4 {
+    grid-area: ph4;
+}
+.ph5 {
+    grid-area: ph5;
+}
+
+//Блок с оформлением заказа
+.order {
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        margin-block-end: 50px;
+    }
+
+    &__content {
+        display: grid;
+        gap: 30px;
+        grid-template: 1fr / 1fr 1fr;
+    }
+
+    &__form {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "name phone mail"
+            "text text text"
+            "check check check";
+        gap: 20px;
+    }
+
+    &__info {
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.form {
+    &__label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &::before {
+            content: "*";
+            position: absolute;
+            color: $accent-color;
+            font-size: 25px;
+            top: -4px;
+            left: -10px;
+        }
+    }
+    &__input {
+        font-size: inherit;
+        padding: 5px;
+        &:focus {
+            outline: none;
+        }
+        &:focus-visible {
+            outline: 1px solid $accent-color;
+            outline-offset: 2px;
+        }
+    }
+
+    &__submit {
+        align-self: flex-end;
+        border: 1px solid $main-text-color;
+        padding: 10px 0;
+        transition: all 0.1s;
+        &:hover {
+            color: $accent-color;
+            border: 1px solid $accent-color;
+        }
+        &:focus {
+            outline: none;
+        }
+        &:focus-visible {
+            outline: 1px solid $accent-color;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.info {
+    &__title {
+        font-size: 30px;
+    }
+
+    &__text {
+        margin-block-end: 20px;
+    }
+
+    &__phone-link {
+        font-size: 25px;
+    }
+
+    &__mail-link {
+        font-size: 25px;
+    }
+}
+
+.label {
+    &__name {
+        grid-area: name;
+    }
+
+    &__phone {
+        grid-area: phone;
+    }
+
+    &__mail {
+        grid-area: mail;
+    }
+
+    &__textarea {
+        grid-area: text;
+    }
+
+    &__checkbox {
+        grid-area: check;
+        display: inline;
+        line-height: 1.5em;
+        font-size: 15px;
+    }
+}
+
+.input {
+    &__name {
+    }
+
+    &__phone {
+    }
+
+    &__mail {
+    }
+
+    &__textarea {
+        resize: none;
+    }
+
+    &__checkbox {
+        cursor: pointer;
+        display: inline-grid;
+        place-content: center;
+        appearance: none;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 0.15em;
+        &::before {
+            content: "";
+            transform-origin: bottom left;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em $accent-color;
+        }
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+}
+
+// Блок с клиентами компании
+.clients {
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        margin-block-end: 50px;
+    }
+
+    &__slider {
+        display: flex;
+        align-items: center;
+        &-button {
+            height: 60px;
+            width: 60px;
+            background-color: transparent;
+            &-icon {
+            }
+        }
+
+        &-list {
+            display: flex;
+            gap: 50px;
+            overflow: hidden;
+        }
+
+        &-item {
+            &-img {
+                height: 100px;
+            }
+        }
+    }
+}
+
+// Подвал сайта
+.footer {
+    margin-block-start: 150px;
+    background-image: url(../images/footer.png);
+    background-size: cover;
+    background-position: center;
+    &__container {
+        padding: 20px;
+        display: grid;
+        grid-template-areas:
+            "logo menu contacts"
+            "info info info";
+        gap: 50px;
+        align-items: center;
+    }
+
+    &__logo {
+        grid-area: logo;
+        width: 150px;
+    }
+
+    &__menu {
+        justify-self: center;
+        font-weight: 600;
+        grid-area: menu;
+    }
+
+    &__menu-list {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__menu-item {
+    }
+
+    &__menu-link {
+    }
+
+    &__contacts {
+        justify-self: end;
+        grid-area: contacts;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__contacts-address-link {
+    }
+
+    &__social-list {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__social-item {
+        width: 40px;
+    }
+
+    &__social-icon {
+        width: 100%;
+        outline-offset: -5px;
+        outline: 5px solid #fff;
+    }
+
+    &__info {
+        text-align: center;
+        grid-area: info;
+    }
+}
+.container {
+}
+.link {
+}
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer-address-link {
+}
