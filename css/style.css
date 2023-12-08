@@ -27,6 +27,15 @@
   font-family: NextArt;
 }
 
+.section__title {
+  text-align: center;
+  font-family: NextArt;
+  font-weight: bold;
+  color: #e3531c;
+  font-size: 50px;
+  margin-block-end: 50px;
+}
+
 .title-accent-big {
   color: #e3531c;
   font-size: 50px;
@@ -69,8 +78,7 @@
   font-size: inherit;
   color: inherit;
   text-align: center;
-  width: calc(33.3333333333% - 100px);
-  padding: 10px 40px;
+  padding: 10px clamp(2.5rem, 1.3636rem + 5.6818vw, 5rem);
   font-size: 30px;
   border-top: 1px solid #f4f4f4;
   border-bottom: 1px solid #f4f4f4;
@@ -90,19 +98,21 @@
 }
 
 .header {
-  z-index: 3;
   position: absolute;
+  z-index: 3;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3019607843);
 }
 .header__container {
+  position: relative;
+  z-index: 3;
+  padding: 20px;
   display: grid;
-  grid-template: clamp(3.125rem, 2.2321rem + 4.4643vw, 6.25rem)/auto 1fr auto;
+  grid-template: auto/auto 1fr auto;
   align-items: center;
   gap: 30px;
 }
 .header__logo {
-  width: clamp(5rem, 4.2857rem + 3.5714vw, 7.5rem);
+  width: 7.5rem;
 }
 .header__menu {
   font-family: NextArt, sans-serif;
@@ -132,6 +142,10 @@
   flex-direction: column;
   gap: 10px;
 }
+.header__popup {
+  display: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -154,6 +168,7 @@
 }
 .about__text-title {
   font-size: 30px;
+  line-height: 50px;
   margin-block-end: 50px;
 }
 .about__text-paragraph {
@@ -186,6 +201,7 @@
 
 .card {
   height: 100%;
+  max-height: 90vh;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -197,7 +213,7 @@
   position: relative;
   padding: 15px;
   display: grid;
-  grid-template: 1fr 2fr 1fr/1fr;
+  grid-template: minmax(auto, 50px) 2fr auto/1fr;
   gap: 25px;
   z-index: 1;
 }
@@ -211,6 +227,7 @@
   gap: 20px;
 }
 .card__content-description {
+  align-self: start;
   line-height: 20px;
 }
 .card__content-list {
@@ -255,9 +272,6 @@
   flex-direction: column;
   align-items: center;
 }
-.portfolio__title {
-  margin-block-end: 50px;
-}
 .portfolio__gallery {
   display: grid;
   grid-template-areas: "ph1 ph1 ph2" "ph3 ph5 ph2" "ph3 ph4 ph4";
@@ -290,10 +304,6 @@
   grid-area: ph5;
 }
 
-.order__title {
-  text-align: center;
-  margin-block-end: 50px;
-}
 .order__content {
   display: grid;
   gap: 30px;
@@ -418,10 +428,6 @@
   transform: scale(1);
 }
 
-.clients__title {
-  text-align: center;
-  margin-block-end: 50px;
-}
 .clients__slider {
   display: flex;
   align-items: center;
@@ -430,6 +436,9 @@
   height: 60px;
   width: 60px;
   background-color: transparent;
+}
+.clients__slider-button-icon {
+  width: 100%;
 }
 .clients__slider-list {
   display: flex;
@@ -494,4 +503,171 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media (width <= 1024px) {
+  .header__contacts {
+    align-self: start;
+  }
+  .header__contacts-callback {
+    display: none;
+  }
+  .card__container {
+    height: 100%;
+    position: relative;
+    padding: 15px;
+    display: grid;
+    grid-template: minmax(auto, 50px) 2fr auto/1fr;
+    gap: 25px;
+    z-index: 1;
+  }
+  .service__cards-list {
+    display: grid;
+    grid-template: repeat(3, 1fr)/1fr;
+    gap: 25px;
+    margin-block-end: 30px;
+  }
+  .order__content {
+    display: grid;
+    gap: 30px;
+    grid-template: 1fr/1fr;
+  }
+  .order__info {
+    display: none;
+  }
+  .footer__container {
+    grid-template-areas: "logo menu contacts" "info info info";
+  }
+  .footer__menu {
+    justify-self: start;
+  }
+  .footer__menu-list {
+    flex-direction: column;
+  }
+}
+@media (width <= 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  .header {
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+  }
+  .header__container {
+    grid-template: auto/auto 1fr auto;
+    grid-template-areas: "logo contacts nav";
+  }
+  .header__logo {
+    grid-area: logo;
+  }
+  .header__nav {
+    grid-area: nav;
+  }
+  .header__contacts {
+    grid-area: contacts;
+    justify-self: end;
+    align-self: center;
+  }
+  .header__menu {
+    display: none;
+  }
+  .nav__menu-burger {
+    display: flex;
+  }
+  .menu-burger__field {
+    cursor: pointer;
+    padding: 16px;
+  }
+  .menu-burger__field .bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 2px;
+    margin: 6px auto;
+    background-color: #f4f4f4;
+    transition: all 0.2s;
+  }
+  .menu-burger__field.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-burger__field.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-burger__field.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .header__popup {
+    display: flex;
+    position: fixed;
+    background-color: #240502;
+    top: -300px;
+    margin-top: -7.5rem;
+    padding: 7.5rem 20px 30px;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .header__popup .header__menu-list {
+    flex-direction: column;
+    font-size: 20px;
+  }
+  .header__popup.open {
+    top: 7.5rem;
+    height: 300px;
+  }
+  .order__form {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas: "name" "phone" "mail" "text" "check";
+    gap: 20px;
+  }
+  .about__container {
+    display: grid;
+    grid-template: 1fr/1fr;
+    gap: 30px;
+  }
+  .portfolio__container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio__gallery {
+    display: grid;
+    grid-template-areas: "ph1" "ph2" "ph3" "ph4" "ph5";
+    gap: 15px;
+    margin-block-end: 30px;
+  }
+  .portfolio__img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__container {
+    padding: 10px 10px;
+    grid-template-areas: "logo menu" "contacts ." "info info";
+  }
+  .footer__contacts {
+    justify-self: start;
+  }
+}
+@media (width <= 450px) {
+  .content {
+    gap: 75px;
+  }
+  .header__contacts {
+    display: none;
+  }
+  .section__title {
+    font-size: clamp(1.875rem, -1.2019rem + 15.3846vw, 3.125rem);
+  }
+  .title-accent-big {
+    font-size: clamp(1.875rem, -1.2019rem + 15.3846vw, 3.125rem);
+  }
+  .title {
+    font-size: clamp(1.5625rem, 0.7933rem + 3.8462vw, 1.875rem);
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -27,22 +27,31 @@
           alt="Логотип сайта, надпись FlyBar на оранжевом фоне"
           class="header__logo"
         />
-        <nav class="header__menu">
-          <ul class="header__menu-list">
-            <li class="header__menu-item">
-              <a href="" class="header__menu-link link">Услуги</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="header__menu-link link">Портфолио</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="header__menu-link link">О нас</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="" class="header__menu-link link">Контакты</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="header__nav">
+          <nav class="header__menu">
+            <ul class="header__menu-list" id="menu">
+              <li class="header__menu-item">
+                <a href="" class="header__menu-link link">Услуги</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="" class="header__menu-link link">Портфолио</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="" class="header__menu-link link">О нас</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="" class="header__menu-link link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="nav__menu-burger">
+            <div class="menu-burger__field" id="hamb">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+        </div>
         <div class="header__contacts">
           <button class="header__contacts-callback button">
             <img
@@ -65,7 +74,9 @@
           </address>
         </div>
       </div>
+      <div class="header__popup" id="popup"></div>
     </header>
+    <script defer src="./js/burger.js"></script>
     <main class="content">
       <section class="banner content__section">
         <div class="overlay"></div>
@@ -211,7 +222,7 @@
       </section>
       <section class="portfolio content__section">
         <div class="portfolio__container container">
-          <h2 class="portfolio__title title title-accent-big">Портфолио</h2>
+          <h2 class="portfolio__title section__title">Портфолио</h2>
           <div class="portfolio__gallery">
             <img
               src="./images/porfolio/coctails2.jpg"
@@ -246,7 +257,7 @@
       </section>
       <section class="order">
         <div class="order__container container">
-          <h2 class="order__title title title-accent-big">Оформить заказ</h2>
+          <h2 class="order__title section__title">Оформить заказ</h2>
           <div class="order__content">
             <form action="" class="order__form">
               <label class="form__label label__name">
@@ -318,7 +329,7 @@
       </section>
       <section class="clients">
         <div class="clients__container container">
-          <h2 class="clients__title title title-accent-big">Наши клиенты</h2>
+          <h2 class="clients__title section__title">Наши клиенты</h2>
           <div class="clients__slider">
             <button class="clients__slider-button" id="slider__button-left">
               <img
@@ -412,7 +423,11 @@
     </main>
     <footer class="footer">
       <div class="footer__container container">
-        <img src="./images/logo/FB_logo.jpg" alt="Логотип компании - надпись FlyBar" class="footer__logo">
+        <img
+          src="./images/logo/FB_logo.jpg"
+          alt="Логотип компании - надпись FlyBar"
+          class="footer__logo"
+        />
         <nav class="footer__menu">
           <ul class="footer__menu-list">
             <li class="footer__menu-item">
