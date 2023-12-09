@@ -20,63 +20,9 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="page">
-    <header class="header">
-      <div class="header__container container">
-        <img
-          src="./images/logo/FB_logo.jpg"
-          alt="Логотип сайта, надпись FlyBar на оранжевом фоне"
-          class="header__logo"
-        />
-        <div class="header__nav">
-          <nav class="header__menu">
-            <ul class="header__menu-list" id="menu">
-              <li class="header__menu-item">
-                <a href="" class="header__menu-link link">Услуги</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="" class="header__menu-link link">Портфолио</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="" class="header__menu-link link">О нас</a>
-              </li>
-              <li class="header__menu-item">
-                <a href="" class="header__menu-link link">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="nav__menu-burger">
-            <div class="menu-burger__field" id="hamb">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </div>
-          </div>
-        </div>
-        <div class="header__contacts">
-          <button class="header__contacts-callback button">
-            <img
-              src="./images/svg_icons/phone.svg"
-              alt="Иконка телефона, обозначающая обратный звонок"
-              class="header__contacts-callback-icon"
-            />Обратный звонок
-          </button>
-          <address class="header__contacts-address">
-            <a
-              href="tel:+74952207061"
-              class="header__contacts-address-link link"
-              >+7 495 220 7061</a
-            >
-            <a
-              href="mailto:ingo@flybar.ru"
-              class="header__contacts-address-link link"
-              >info@flybar.ru</a
-            >
-          </address>
-        </div>
-      </div>
-      <div class="header__popup" id="popup"></div>
-    </header>
-    <script defer src="./js/burger.js"></script>
+    <!-- Шапка сайта -->
+    <header class="header"></header>
+    <!-- Основной контент сайта -->
     <main class="content">
       <section class="banner content__section">
         <div class="overlay"></div>
@@ -330,79 +276,72 @@
       <section class="clients">
         <div class="clients__container container">
           <h2 class="clients__title section__title">Наши клиенты</h2>
-          <div class="clients__slider">
-            <button class="clients__slider-button" id="slider__button-left">
-              <img
-                src="./images/svg_icons/arrow-left.svg"
-                alt="Кнопка для перемещения списка влево"
-                class="clients__slider-button-icon"
-              />
-            </button>
-            <ul class="clients__slider-list">
-              <li class="clients__slider-item">
+          <div class="clients__slider swiper">
+            <ul class="clients__slider-list swiper-wrapper">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/sberbank.png"
                   alt="Логотип Сбербанк"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/yota.png"
                   alt="Логотип Yota"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/avito.png"
                   alt="Логотип Avito"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/megafon.png"
                   alt="Логотип Мегафон"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/microsoft.png"
                   alt="Логотип Microsoft"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/beeline.png"
                   alt="Логотип Билайн"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/brilliance.png"
                   alt="Логотип Brilliance"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/lukoil.png"
                   alt="Логотип Лукойл"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/ozon.png"
                   alt="Логотип Озон"
                   class="clients__slider-item-img"
                 />
               </li>
-              <li class="clients__slider-item">
+              <li class="clients__slider-item swiper-slide">
                 <img
                   src="./images/clients/pfizer.png"
                   alt="Логотип Pfizer"
@@ -410,83 +349,15 @@
                 />
               </li>
             </ul>
-            <button class="clients__slider-button" id="slider__button-right">
-              <img
-                src="./images/svg_icons/arrow-right.svg"
-                alt="Кнопка для перемещения списка вправо"
-                class="clients__slider-button-icon"
-              />
-            </button>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="footer__container container">
-        <img
-          src="./images/logo/FB_logo.jpg"
-          alt="Логотип компании - надпись FlyBar"
-          class="footer__logo"
-        />
-        <nav class="footer__menu">
-          <ul class="footer__menu-list">
-            <li class="footer__menu-item">
-              <a href="" class="footer__menu-link link">Услуги</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="" class="footer__menu-link link">Портфолио</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="" class="footer__menu-link link">О нас</a>
-            </li>
-            <li class="footer__menu-item">
-              <a href="" class="footer__menu-link link">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="footer__contacts">
-          <address class="footer-address">
-            <a
-              href="tel:+74952207061"
-              class="footer__contacts-address-link link"
-              >+7 495 220 7061</a
-            >
-            <a href="mailto:ingo@flybar.ru" class="footer-address-link link"
-              >info@flybar.ru</a
-            >
-          </address>
-          <ul class="footer__social-list">
-            <li class="footer__social-item">
-              <a href=""
-                ><img
-                  src="./images/social/vk.svg"
-                  alt="Иконка-ссылка на наш паблик в Вконтакте"
-                  class="footer__social-icon"
-              /></a>
-            </li>
-            <li class="footer__social-item">
-              <a href=""
-                ><img
-                  src="./images/social/telegram.svg"
-                  alt="Иконка-ссылка на наш канал в Телеграмме"
-                  class="footer__social-icon"
-              /></a>
-            </li>
-            <li class="footer__social-item">
-              <a href=""
-                ><img
-                  src="./images/social/whatsapp.svg"
-                  alt="Иконка-ссылка на нашего менеджера в Ватсап"
-                  class="footer__social-icon"
-              /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__info">
-          <p>© 2006-2023 «Fly Bar»</p>
-          <p>Политика конфиденциальности</p>
-        </div>
-      </div>
-    </footer>
+    <!-- Подвал сайта -->
+    <footer class="footer"></footer>
+    <!-- Скрипты -->
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/slider.js"></script>
   </body>
 </html>
